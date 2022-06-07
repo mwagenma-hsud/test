@@ -6,4 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          yq '.jobs.test.runs-on' .github/workflows/test.yml
+          #yq '.jobs.test.runs-on' .github/workflows/test.yml
+          #yq r .github/workflows/test.yml '.global' -ppv
+          env $(./yq r .github/workflows/test.yml '.global' -ppv | sed 's/: /=/' | xargs )
