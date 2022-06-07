@@ -9,4 +9,4 @@ jobs:
           #yq '.jobs.test.runs-on' .github/workflows/test.yml
           #yq r .github/workflows/test.yml '.global' -ppv
           #env $( yq r .github/workflows/env.yml '.global' -ppv | sed 's/: /=/' | xargs )
-          yq r .github/workflows/env.yml '.global' -ppv | sed 's/: /=/' | xargs
+          yq '.global' .github/workflows/env.yml | sed 's/: /=/' | xargs
