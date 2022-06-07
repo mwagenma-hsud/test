@@ -7,4 +7,6 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
           echo "$( yq '.global' .github/workflows/env.yml | sed 's/: /=/' )" >> $GITHUB_ENV
-      - run: echo $a
+      - run: |
+          echo $a
+          echo $b
