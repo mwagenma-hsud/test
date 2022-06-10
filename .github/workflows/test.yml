@@ -4,6 +4,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Helm
+        uses: azure/setup-helm@v2.1
       - run: |
-          file=".github/workflows/env.yml"
+          file="./.github/workflows/env.yml"
           cat $file
