@@ -4,9 +4,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - run: |
-          echo "$( yq '.global' .github/workflows/env.yml | sed 's/: /=/' )" >> $GITHUB_ENV
-      - run: |
-          echo $a
-          echo $b
+          export file="env.yml"
+          cat $file
