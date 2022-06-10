@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          export file="env.yml"
+          file=".github/workflows/env.yml"
           cat $file
