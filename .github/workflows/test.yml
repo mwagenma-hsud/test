@@ -1,11 +1,15 @@
 name: Test
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      value:
+        type: text
+        required: false
+      
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Helm
-        uses: azure/setup-helm@v2.1
       - run: |
-          file="./.github/workflows/env.yml"
-          cat $file
+          value=${{ inputs.value == "a" ? "Value set" | "Value NOT set" }}
+          echo "value: $value"
