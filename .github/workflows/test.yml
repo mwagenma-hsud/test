@@ -1,14 +1,14 @@
 name: Test
 on:
   workflow_dispatch:
-    inputs:
-      value:
-        type: text
-        required: false
+  pull_request:
+  push:
       
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "value: ${{ github.ref_name }}"
+          echo "ref_name: ${{ github.ref_name }}"
+          echo "head_ref: ${{ github.head_ref }}"
+          echo "PR #: ${{ github.event.number }}"
