@@ -11,5 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          value="${{ inputs.value == 'a' ? 'Value set' | 'Value NOT set' }}"
-          echo "value: $value"
+          echo "value: ${{ github.ref_name }}"
