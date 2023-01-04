@@ -1,7 +1,7 @@
 name: TagTest
 
 on:
-  create:
+  push:
     tags:
       - '*'
       
