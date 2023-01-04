@@ -2,11 +2,9 @@ name: TagTest
 
 on:
   create:
-    tags:
-      - '*'
+    branches:
+      - 'release/**'
   push:
-    tags:
-      - '*'
     branches:
       - 'release/**'
 
