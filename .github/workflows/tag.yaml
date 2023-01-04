@@ -1,0 +1,19 @@
+name: Tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to set'
+        required: true
+      
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: |
+          tag=v${{ inputs.tag }}
+          git tag -a $tag -m "Setting a nice tag"
+          git push origin $tag
