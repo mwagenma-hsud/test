@@ -18,6 +18,6 @@ jobs:
           git config --global user.name "Bot"
           tag=v${{ inputs.tag }}
           git checkout -b release/$tag
-          git push
+          git push --set-upstream origin release/v1.2.3
           git tag -a $tag -m "Setting a nice tag"
           git push origin $tag
