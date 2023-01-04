@@ -17,5 +17,7 @@ jobs:
           git config --global user.email "<>"
           git config --global user.name "Bot"
           tag=v${{ inputs.tag }}
+          git checkout -b release/$tag
+          git push
           git tag -a $tag -m "Setting a nice tag"
           git push origin $tag
